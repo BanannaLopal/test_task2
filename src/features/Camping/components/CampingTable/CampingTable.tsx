@@ -1,6 +1,6 @@
 import { memo, ReactNode } from 'react';
 
-export const CampingTable = memo(({ campingRows }: {
+export const CampingTable = ({ campingRows }: {
   campingRows: ReactNode[];
 }) => {
   return (
@@ -8,4 +8,4 @@ export const CampingTable = memo(({ campingRows }: {
       {campingRows.map((row) => row)}
     </div>
   )
-})
+}

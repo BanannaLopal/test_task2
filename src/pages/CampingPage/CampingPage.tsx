@@ -1,5 +1,5 @@
 import { CampingRow, CampingTable, CampingHeader, CampingFooter } from 'features/Camping';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { CampingUserType, EditCampingUserType, getId } from 'models/CampingUser.model';
 import CSS from './CampingPage.module.scss';
 
