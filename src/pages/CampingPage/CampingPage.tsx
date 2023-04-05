@@ -26,14 +26,14 @@ export const CampingPage = () => {
     setCampingUsers((users) => users.filter(user => user.id !== id));
   }, [setCampingUsers])
 
-  const campingRows = useMemo(() => {
+  const campingRows = () => {
     return campingUsers.map(campingUser => <CampingRow key={campingUser.id} onDelete={handleDelete} onEdit={handleEdit} campingUser={campingUser} />)
-  }, [campingUsers, handleDelete, handleEdit])
+  }
 
   return (
     <div className={CSS.root}>
       <CampingHeader onAdd={handleAdd} />
-      <CampingTable campingRows={campingRows} />
+      <CampingTable campingRows={campingRows()} />
       <CampingFooter campingUsers={campingUsers} />
     </div>
   )

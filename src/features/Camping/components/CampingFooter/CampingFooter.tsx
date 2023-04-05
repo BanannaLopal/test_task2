@@ -1,10 +1,10 @@
-import { memo, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CampingTripsType, getIntersection } from 'models/CampingTrips.model';
 import { CampingUserType } from 'models/CampingUser.model';
 import { GlobeSvg } from 'features/UI/assets';
 import CSS from './CampingFooter.module.scss';
 
-export const CampingFooter = memo(({ campingUsers }: {
+export const CampingFooter = ({ campingUsers }: {
   campingUsers: CampingUserType[];
 }) => {
   const [campingTrips, setCampingTrips] = useState<CampingTripsType[]>([]);
@@ -24,4 +24,4 @@ export const CampingFooter = memo(({ campingUsers }: {
       {!campingTrips.length && 'Нет совпадений'}
     </>
   )
-})
+}
