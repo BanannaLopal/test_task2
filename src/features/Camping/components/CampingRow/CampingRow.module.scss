@@ -1,0 +1,14 @@
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.nameCell {
+  width: 250px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.dateCell {
+  width: 250px;
+}

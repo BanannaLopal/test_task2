@@ -1,0 +1,10 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  & > svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+}

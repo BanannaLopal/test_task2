@@ -1,0 +1,18 @@
+.root {
+  display: inline-flex;
+  width: 15px;
+  -webkit-transition: width 400ms ease-in-out;
+  -moz-transition: width 400ms ease-in-out;
+  -o-transition: width 400ms ease-in-out;
+  transition: width 400ms ease-in-out;
+
+  &Active {
+    width: 250px;
+  }
+}
+
+.calendarInput {
+  position: relative;
+  width: 100%;
+  border: 0;
+}

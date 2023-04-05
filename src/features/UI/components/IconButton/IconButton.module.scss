@@ -1,0 +1,12 @@
+.btn {
+  border: none;
+  cursor: pointer;
+  background: none;
+  border-radius: 50px;
+
+  > svg {
+    width: 25px;
+    height: auto;
+    vertical-align: middle;
+  }
+}
