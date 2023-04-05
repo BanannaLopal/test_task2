@@ -1,6 +1,9 @@
 import { CampingUserType } from './CampingUser.model';
 import { addDays } from 'lib/date';
 
+const CampingDays = 2;
+const MinimumNumberOfParticipantsForCampingTrip = 2;
+
 export type CampingTripsType = {
   id: number;
   startDate: Date;
@@ -19,9 +22,9 @@ export const getIntersection = (campingUsers: CampingUserType[]): CampingTripsTy
     let difference = campingUser.endDate.getTime() - campingUser.startDate.getTime();
     let days = Math.ceil(difference / (1000 * 3600 * 24));
     let i = 0;
-    while (days >= 2) {
+    while (days >= CampingDays) {
       const startDate = addDays(i, campingUser.startDate);
-      const endDate = addDays(2, startDate);
+      const endDate = addDays(CampingDays, startDate);
       const campingTripIndex = res.findIndex((trip) => trip.endDate.getTime() === endDate.getTime() && trip.startDate.getTime() === startDate.getTime());
       if (campingTripIndex > -1) {
         res[campingTripIndex].users.push(campingUser);
@@ -39,5 +42,5 @@ export const getIntersection = (campingUsers: CampingUserType[]): CampingTripsTy
     }
   }
 
-  return res.filter(({users}) => users.length > 1).sort((a, b) => b.users.length - a.users.length);
+  return res.filter(({users}) => users.length >= MinimumNumberOfParticipantsForCampingTrip).sort((a, b) => b.users.length - a.users.length);
 }
